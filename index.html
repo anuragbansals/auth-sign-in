@@ -6,9 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="btn" >
-        Log In
-    </div>
+    <div id="btn">Log In</div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script type="module">
@@ -24,16 +22,22 @@
       async function signInWithFacebook() {
         const { data, error } = await supabase.auth.signInWithOAuth({
           provider: "facebook",
+          options: {
+            redirectTo: `http://localhost:3000/auth/callback`,
+          },
         });
-        console.log(data);
-        console.log(error);
+        alert(JSON.stringify(data));
+        console.log(data, "zzz data");
+        console.log(error, "zz error");
       }
 
       let btn = document.getElementById("btn");
       btn.addEventListener("click", signInWithFacebook);
-
-    //   console.log("Supabase Instance: ", supabase);
-      // ...
     </script>
   </body>
 </html>
+
+<!-- {"provider":"facebook","url":"https://mivdbkihexmoiftqtwic.supabase.co/auth/v1/authorize?provider=facebook"} -->
+
+
+<!-- https://www.facebook.com/privacy/consent/gdp/?params%5Bapp_id%5D=1012379923693831&params%5Bkid_directed_site%5D=false&params%5Blogger_id%5D=%22b7bbd77d-fcaa-46c1-ab26-a8e7d8f3b4ad%22&params%5Bnext%5D=%22confirm%22&params%5Bredirect_uri%5D=%22https%3A%5C%2F%5C%2Fmivdbkihexmoiftqtwic.supabase.co%5C%2Fauth%5C%2Fv1%5C%2Fcallback%22&params%5Bresponse_type%5D=%22code%22&params%5Breturn_scopes%5D=false&params%5Bscope%5D=%5B%22email%22%5D&params%5Bstate%5D=%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjM0ODE4MjEsInNpdGVfdXJsIjoiaHR0cHM6Ly9taXZkYmtpaGV4bW9pZnRxdHdpYy5zdXBhYmFzZS5jby9hdXRoL3YxL2NhbGxiYWNrIiwiaWQiOiIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMDAiLCJmdW5jdGlvbl9ob29rcyI6bnVsbCwicHJvdmlkZXIiOiJmYWNlYm9vayIsInJlZmVycmVyIjoiaHR0cHM6Ly9taXZkYmtpaGV4bW9pZnRxdHdpYy5zdXBhYmFzZS5jby9hdXRoL3YxL2NhbGxiYWNrIiwiZmxvd19zdGF0ZV9pZCI6IiJ9.c6cIaE8l68EVEWrgx4G6i2deAOxF9SZ9nc_Cq3PlIyM%22&params%5Bsteps%5D=%7B%7D&params%5Btp%5D=%22unspecified%22&params%5Bcui_gk%5D=%22%5BPASS%5D%3Alogin_platformization_confirm%22&params%5Bis_limited_login_shim%5D=false&source=gdp_delegated -->

@@ -25,12 +25,14 @@
         const { data, error } = await supabase.auth.signInWithOAuth({
           provider: "facebook",
         });
+        console.log(data);
+        console.log(error);
       }
 
       let btn = document.getElementById("btn");
       btn.addEventListener("click", signInWithFacebook);
 
-      console.log("Supabase Instance: ", supabase);
+    //   console.log("Supabase Instance: ", supabase);
       // ...
     </script>
   </body>

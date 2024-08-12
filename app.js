@@ -34,4 +34,4 @@ async function signInWithFacebook() {
 
   let btn = document.getElementById('fb-btn');
   btn.addEventListener('click', signInWithFacebook);
-//   signInWithFacebook();
+//   signInWithFacebook();\

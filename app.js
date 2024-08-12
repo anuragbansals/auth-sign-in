@@ -25,7 +25,12 @@ async function signInWithFacebook() {
     console.log('signInWithFacebook');
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'facebook',
+      options: {
+        redirectTo: 'https://auth-sign-in.vercel.app/auth/callback'
+      }
     })
+
+    console.log(error,'zzz error')
 
     console.log(data,'zzz data');
   }

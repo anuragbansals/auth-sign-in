@@ -18,8 +18,7 @@
         email: "anuragbansal@gmail.com",
       };
 
-      console.log("react native web view");
-      window.ReactNativeWebView.postMessage("helllooo");
+      window.ReactNativeWebView.postMessage(JSON.stringify(data));
       console.log("data", data);
     </script>
   </body>

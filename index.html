@@ -7,18 +7,69 @@
   </head>
   <body>
     <div id="app">
-      <div style="background-color: red; width: 20px; height: 20px;" ></div>
+      <div style="height:200px;width:200px;margin:auto; margin-top:200px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <radialGradient
+            id="a6"
+            cx=".66"
+            fx=".66"
+            cy=".3125"
+            fy=".3125"
+            gradientTransform="scale(1.5)"
+          >
+            <stop offset="0" stop-color="#0094DB"></stop>
+            <stop offset=".3" stop-color="#0094DB" stop-opacity=".9"></stop>
+            <stop offset=".6" stop-color="#0094DB" stop-opacity=".6"></stop>
+            <stop offset=".8" stop-color="#0094DB" stop-opacity=".3"></stop>
+            <stop offset="1" stop-color="#0094DB" stop-opacity="0"></stop>
+          </radialGradient>
+          <circle
+            transform-origin="center"
+            fill="none"
+            stroke="url(#a6)"
+            stroke-width="15"
+            stroke-linecap="round"
+            stroke-dasharray="200 1000"
+            stroke-dashoffset="0"
+            cx="100"
+            cy="100"
+            r="70"
+          >
+            <animateTransform
+              type="rotate"
+              attributeName="transform"
+              calcMode="spline"
+              dur="2"
+              values="360;0"
+              keyTimes="0;1"
+              keySplines="0 0 1 1"
+              repeatCount="indefinite"
+            ></animateTransform>
+          </circle>
+          <circle
+            transform-origin="center"
+            fill="none"
+            opacity=".2"
+            stroke="#0094DB"
+            stroke-width="15"
+            stroke-linecap="round"
+            cx="100"
+            cy="100"
+            r="70"
+          ></circle>
+        </svg>
+      </div>
     </div>
 
     <script>
       let data = {
-        firsname: "Anurag",
+        firstname: "Anurag",
         lastname: "Bansal",
         id: "123456789",
         email: "anuragbansal@gmail.com",
       };
 
-      window.ReactNativeWebView.postMessage(JSON.stringify(data));
+      // window.ReactNativeWebView.postMessage(JSON.stringify(data));
       console.log("data", data);
     </script>
   </body>

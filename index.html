@@ -8,7 +8,7 @@
   <body>
     <div id="app">
       <div style="height:150px;width:150px;margin:auto; margin-top:80px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
           <radialGradient
             id="a6"
             cx=".66"
@@ -57,7 +57,7 @@
             cy="100"
             r="70"
           ></circle>
-        </svg>
+        </svg> -->
       </div>
       <div style="margin:auto; margin-top:20px; text-align: center;" >Verifying user...</div>
     </div>
@@ -69,7 +69,8 @@
         id: "123456789",
         email: "anuragbansal@gmail.com",
       };
-
+      // window.location.href = "io.exposi.event://"
+      window.location.replace("http://io.exposim.event://");
       window.ReactNativeWebView.postMessage(JSON.stringify(data));
     </script>
   </body>

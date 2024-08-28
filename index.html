@@ -72,9 +72,10 @@
         firstname: "Anurag",
         lastname: "Bansal",
         id: "123456789",
-        email: "anuragbansal@gmail.com",
+        email: "anuragbansal@gmail.com"
       };
       const formatData = JSON.stringify(data);
+      console.log(formatData)
       document.getElementById(
         "link"
       ).href = `exposim://app/login?${formatData}`;

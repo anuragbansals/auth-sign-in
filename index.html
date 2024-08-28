@@ -72,13 +72,13 @@
         firstname: "Anurag",
         lastname: "Bansal",
         id: "123456789",
-        email: "anuragbansal@gmail.com"
+        email: "anuragbansal@gmail.com",
       };
       const formatData = JSON.stringify(data);
-      console.log(formatData)
+      console.log(formatData);
       document.getElementById(
         "link"
-      ).href = `exposim://app/login?${formatData}`;
+      ).href = `exposim://app/login?${encodeURIComponent(formatData)}`;
       // window.location.href = "io.exposi.event://"
       // window.location.replace("http://io.exposim.event://");
       window.ReactNativeWebView.postMessage(JSON.stringify(data));

@@ -69,8 +69,8 @@
 
     <script>
       let data = {
-        name: "Anurag",
-        email: "anuragbansal@gmail.com",
+        name: "Anurag Bansal",
+        email: "anuragbansal69040@gmail.com",
       };
       function objectToQueryString(obj) {
         const keys = Object.keys(obj);
@@ -79,13 +79,9 @@
         });
         return keyValuePairs.join("&");
       }
-      // const formatData = JSON.stringify(data);
-      // console.log(formatData);
       document.getElementById(
         "link"
       ).href = `exposim://app/login?${objectToQueryString(data)}`;
-      // window.location.href = "io.exposi.event://"
-      // window.location.replace("http://io.exposim.event://");
       window.ReactNativeWebView.postMessage(JSON.stringify(data));
     </script>
   </body>

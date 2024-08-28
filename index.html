@@ -81,7 +81,7 @@
       }
       document.getElementById(
         "link"
-      ).href = `exposim://app/login?${objectToQueryString(data)}`;
+      ).href = `exposim://app/login?data=${JSON.stringify(data)}`;
       window.ReactNativeWebView.postMessage(JSON.stringify(data));
     </script>
   </body>

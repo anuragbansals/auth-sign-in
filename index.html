@@ -74,11 +74,18 @@
         id: "123456789",
         email: "anuragbansal@gmail.com",
       };
-      const formatData = JSON.stringify(data);
-      console.log(formatData);
+      function objectToQueryString(obj) {
+        const keys = Object.keys(obj);
+        const keyValuePairs = keys.map((key) => {
+          return encodeURIComponent(key) + "=" + encodeURIComponent(obj[key]);
+        });
+        return keyValuePairs.join("&");
+      }
+      // const formatData = JSON.stringify(data);
+      // console.log(formatData);
       document.getElementById(
         "link"
-      ).href = `exposim://app/login?${encodeURIComponent(formatData)}`;
+      ).href = `exposim://app/login?${objectToQueryString(data)}`;
       // window.location.href = "io.exposi.event://"
       // window.location.replace("http://io.exposim.event://");
       window.ReactNativeWebView.postMessage(JSON.stringify(data));
